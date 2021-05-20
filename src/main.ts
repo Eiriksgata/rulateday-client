@@ -6,6 +6,10 @@ import store from './store'
 import './plugins/element.js'
 import i18n from './i18n'
 
+import moment from 'moment'//导入文件
+
+Vue.prototype.$moment = moment;//赋值使用
+
 Vue.config.productionTip = false
 
 new Vue({
