@@ -3,7 +3,7 @@ import './plugins/axios'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import './plugins/element.js'
+import './plugins/element.ts'
 import i18n from './i18n'
 
 import moment from 'moment'//导入文件
