@@ -1,10 +1,26 @@
 module.exports = {
+  publicPath:"./",
   pluginOptions: {
     i18n: {
-      locale: undefined,
-      fallbackLocale: undefined,
-      localeDir: undefined,
-      enableInSFC: undefined
+      locale: 'zh_CH',
+      fallbackLocale: 'zh_CH',
+      localeDir: 'locales',
+      enableInSFC: true
+    }
+  },
+  devServer:{
+    port: 8083,
+    host: "localhost",
+    https: false,
+    open: true,
+    proxy:{
+      '/':{
+        target: "http://localhost:8089",
+        changOrigin:true,
+        pathRewrite:{
+          '^/api': ''
+        }
+      }
     }
   }
 }
