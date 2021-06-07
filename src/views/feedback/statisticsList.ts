@@ -7,6 +7,8 @@ import { Component } from "vue-property-decorator";
 export default class ViewStatisticsList extends Vue {
 
   feedbackList = [];
+  activeIndex = '2';
+
 
   /**
    * 初始运行
@@ -21,7 +23,7 @@ export default class ViewStatisticsList extends Vue {
 
   deleteFeedback(id: number) {
     const _this = this;
-  
+
     Axios({
       url: '/feedback/delete',
       method: 'post',
@@ -66,7 +68,7 @@ export default class ViewStatisticsList extends Vue {
       }
     }).then(function (response) {
       if (response.data.code === 0) {
-        
+
 
         _this.feedbackList = response.data.data.list;
 
@@ -84,6 +86,20 @@ export default class ViewStatisticsList extends Vue {
         message: err
       });
     });
+  }
+
+  handleSelect(key: string, keyPath: any) {
+    switch (key) {
+      case '1':
+        this.$router.push('/exception/commit');
+        return;
+      case '2':
+        this.$router.push('/exception/list');
+        return;
+      case '3':
+        window.open("https://rulateday-api.herokuapp.com/doc.html#/home", "_blank");
+        return;
+    }
   }
 
 

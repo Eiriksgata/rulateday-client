@@ -1,7 +1,7 @@
 <template>
   <div class="feedback-commit">
     <el-container>
-      <el-main>
+      <el-main  class="feedback-commit">
         <el-card class="card-style">
           <el-form label-position="top">
             <el-form-item label="出错的指令格式,或者描述问题">
@@ -26,7 +26,7 @@
               ></el-input>
             </el-form-item>
 
-            <el-form-item label="QQ">
+            <el-form-item label="联系QQ">
               <el-input
                 v-model="form.qqId"
                 placeholder=""
@@ -40,9 +40,14 @@
           <el-row class="line-height-spacing">
             <el-button @click="commitForm()" type="primary">提交</el-button>
           </el-row>
+
+          <el-row class="line-height-spacing">
+            <el-button @click="$router.push('/')" type="warning"
+              >返回导航</el-button
+            >
+          </el-row>
         </el-card>
       </el-main>
-      <el-footer></el-footer>
     </el-container>
   </div>
 </template>

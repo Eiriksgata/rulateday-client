@@ -41,5 +41,19 @@ export default class ViewFeedbackCommit extends Vue {
 
   }
 
+  handleSelect(key: string, keyPath: any) {
+    switch (key) {
+      case '1':
+        this.$router.push('/exception/commit');
+        return;
+      case '2':
+        this.$router.push('/exception/list');
+        return;
+      case '3':
+        window.open("https://rulateday-api.herokuapp.com/doc.html#/home", "_blank");
+        return;
+    }
+  }
+
 
 }
